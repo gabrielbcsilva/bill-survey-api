@@ -47,7 +47,7 @@ public class BillController {
 		String path = "/bill-survey-api/v1";
 
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("").build().toUri();
-		// try {
+		try {
 			if (PaymentService.isEmpty(paymentRequest)) {
 				return ResponseEntity.badRequest().body(new ErrorInfo(new Date(), HttpStatus.BAD_REQUEST.value(),
 						"Não são permitidos valores nulos ou campos vazios.", path));
@@ -70,10 +70,10 @@ public class BillController {
 			
 			return ResponseEntity.created(uri).body(billCreated);
 
-		// } catch (Ex e) {
-		// 	return e.getStatusCode().value() == 404 ? ResponseEntity.notFound().build()
-		// 			: ResponseEntity.internalServerError().build();
-		// }
+		} catch (HttpClientErrorException e) {
+			return e.getStatusCode().value() == 404 ? ResponseEntity.notFound().build()
+					: ResponseEntity.internalServerError().build();
+		}
 
 	}
 
