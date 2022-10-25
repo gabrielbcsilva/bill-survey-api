@@ -1,5 +1,6 @@
 package io.github.gabrielbcsilva.bill_survey_api.controller;
 
+import java.net.URI;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -45,7 +46,7 @@ public class BillController {
 	public ResponseEntity<Object> create(@RequestBody(required = true) Payment paymentRequest) {
 		String path = "/bill-survey-api/v1";
 
-		var uri = ServletUriComponentsBuilder.fromCurrentRequest().path("").build().toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("").build().toUri();
 		try {
 			if (PaymentService.isEmpty(paymentRequest)) {
 				return ResponseEntity.badRequest().body(new ErrorInfo(new Date(), HttpStatus.BAD_REQUEST.value(),
