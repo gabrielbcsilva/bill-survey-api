@@ -32,7 +32,7 @@ import io.github.gabrielbcsilva.bill_survey_api.service.BillService;
 import io.github.gabrielbcsilva.bill_survey_api.service.PaymentService;
 
 @RestController
-@RequestMapping("/bill-survey-api/bills")
+@RequestMapping("/bill-survey-api/v1")
 public class BillController {
 	private static final Logger logger = Logger.getLogger(BillController.class);
 	private final RestTemplate restTemplate = new RestTemplateBuilder().build();
@@ -43,7 +43,7 @@ public class BillController {
 	@PostMapping
 	@ResponseBody
 	public ResponseEntity<Object> create(@RequestBody(required = true) Payment paymentRequest) {
-		String path = "/bill-survey-api/bills";
+		String path = "/bill-survey-api/v1";
 
 		var uri = ServletUriComponentsBuilder.fromCurrentRequest().path("").build().toUri();
 		try {

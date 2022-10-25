@@ -45,7 +45,7 @@ class BillSurveyApiIntegrationTests {
 		HttpEntity<Map<String, Object>> entity = new HttpEntity<>(map, headers);
 
 		ResponseEntity<String> responseEntity = this.restTemplate.exchange("http://localhost:"
-				+ port + "/bill-survey-api/bills", HttpMethod.POST, entity, String.class);
+				+ port + "/bill-survey-api/v1", HttpMethod.POST, entity, String.class);
 
 		assertEquals(201, responseEntity.getStatusCodeValue());
 	}

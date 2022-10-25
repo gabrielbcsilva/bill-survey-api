@@ -44,7 +44,7 @@ import io.github.gabrielbcsilva.bill_survey_api.service.BillService;
 @TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, MockitoTestExecutionListener.class })
 public class BillControllerTest {
     
-    static final String URL = "/bill-survey-api/bills";
+    static final String URL = "/bill-survey-api/v1";
     static final  int id=1;
     static final BigDecimal original_amount=new BigDecimal(100);
     static final BigDecimal amount=new BigDecimal(100);
