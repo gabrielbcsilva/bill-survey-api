@@ -1,10 +1,15 @@
 # bill-survey-api
 Uma API para consulta de valores de juros e preço final de boletos vencidos. Desenvolvido utilizando Java com SpringBoot
 
+<h3 align="center">
+    <img alt="Logo" title="#logo" width="170px" src="https://www.celsonunes.com.br/wp-content/uploads/2018/05/java-logo.png">
+    <img alt="Logo" title="#logo" width="200px" src="https://4.bp.blogspot.com/-ou-a_Aa1t7A/W6IhNc3Q0gI/AAAAAAAAD6Y/pwh44arKiuM_NBqB1H7Pz4-7QhUxAgZkACLcBGAs/s1600/spring-boot-logo.png">
+   
+</h3>
 
-## Sobre a API
+## Sobre
 
-Uma API que tem como objetivo retornar dados de um boleto de pagamento válido contendo: Sua Data de Pagamento, Data de Vencimento, Valor original da Multa, Valor com a Multa e seus respectivos juros.  O URL principal da API `/bill-survey-api/v1`.
+Esta API que tem como objetivo retornar dados de um boleto de pagamento válido contendo: Sua Data de Pagamento, Data de Vencimento, Valor original da Multa, Valor com a Multa e seus respectivos juros.  O URL principal da API `/bill-survey-api/v1`.
 
 ## Features
 
@@ -38,7 +43,7 @@ Retornos possíveis:
 * 201 - Created: Tudo ocorreu como esperado.
 * 400 - Bad Request: A requisição não foi aceita, geralmente devido à falta de um parâmetro obrigatório ou JSON inválido.
 * 404 - Not Found: Boleto não foi encontrado na Base.
-* 422 – Unprocessable Entity: Se algum dos campos não for válido ou a data de pagamento for maior que a data atual.
+* 422 – Unprocessable Entity: Se algum dos campos não for válido ou a data for inválida.
 * 500 - Server Errors: Erro interno.
 
 
@@ -82,7 +87,7 @@ Retornos possíveis:
 
 Este projeto foi desenvolvido utilizando:
 
-* **Java 11 (Java Development Kit - JDK: 11.0.9)**
+* **Java 1.8 (Java Development Kit - JDK: 1.8 )**
 * **Spring Boot 2.7.4**
 * **Maven**
 * **JUnit 5**
@@ -121,6 +126,17 @@ mvn test
 ### Endereço Local
 
 Por padrão, a API estará disponível em [http://localhost:8080/bill-survey-api/v1](http://localhost:8080//bill-survey-api/v1)
+
+### Conexão Remota(Heroku)
+
+* Conexão com banco de dados no servidor de aplicação:
+
+```properties
+username=b2ec6294d36690
+password=c1960dac
+hostname=us-cdbr-east-06.cleardb.net
+port=3306
+```
 
 ### Documentação
 
